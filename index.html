@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/0ace3fb025.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>SHOURYA | Sport is life</title>
+  </head>
+  <body>
+    <div class="container">
+      <!<img src="img.jpg" alt="sport is life" height="100%" width="100%" />
+      <div class="form-box">
+        <h1>Sign Up</h1>
+        <form name="myform" id="myform" onsubmit="return validation()">
+          <! so myname is for accesing this form and onsubmitting it will return the function validation() in yes or no if yes then this form will be submitted otherwise it will not submitted>
+          <div class="input-group">
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                name="names"
+                placeholder="Name"
+                value=""
+              /><!in order to access this input in java we have to give a name>
+              <! we can use label tag as label username label closes for this kind of texts: username:____________>
+            </div>
+            <div id="error"></div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                type="email"
+                name="emails"
+                id="email"
+                placeholder="Email"
+                title="Please use a Gmail account"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" name="name_p" placeholder="Password" />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                type="contactno"
+                name="contactno"
+                placeholder="Contact No"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-venus-mars"></i>
+              <input type="gender" placeholder="Gender" />
+            </div>
+            <div class="input-field checkbox-game">
+              <p>Games you are intereted in:</p>
+
+              <li><input type="checkbox" />Cricket</li>
+              <li><input type="checkbox" />Football</li>
+              <li><input type="checkbox" />Badminton</li>
+              <li><input type="checkbox" />Swimming</li>
+              <li><input type="checkbox" />Volleyball</li>
+              <li><input type="checkbox" />Squash</li>
+              <li><input type="checkbox" />Athletics</li>
+            </div>
+
+            <div class="btn-field">
+              <button type="submit">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var username = document.forms["myform"]["names"]; //variable name can be different;
+      var errors = document.getElementById("error"); //in document we are accesing id=error;
+      var regularexpression = /^[a-zA-Z ]*$/;
+      var contactexp = /^[0-9]*$/;
+      var password = document.forms["myform"]["name_p"];
+      var contactno = document.forms["myform"]["contactno"];
+      var email = document.forms["myform"]["emails"];
+      //var email = document.getElementById("email");
+      const emailexp = /^[[a-zA-Z0-9._%+-]+[@gmail\.com]]*$/;
+
+      function validation() {
+        if (username.value == "") {
+          /* errors.innerHTML = "user name must be filled";
+                  errors.style.display = "block";*/
+          alert("Name must be filled");
+          return false;
+        }
+
+        if (username.value.length < 5) {
+          alert("Name should have atleast 5 characters");
+          return false;
+        }
+        if (!username.value.match(regularexpression)) {
+          alert(
+            "Name should not contain elements other than letters and space"
+          );
+          return false;
+        }
+        /* if (!emails.value.match(emailexp)) {
+          alert("Only gmail address is allowed");
+          return false;*/
+
+        if (password.value.length < 8) {
+          alert("Password should have atleast 8 characters");
+          return false;
+        }
+        if (contactno.value.length != 10) {
+          alert("Please type 10 digit of contact no");
+          return false;
+        }
+        if (!contactno.value.match(contactexp)) {
+          alert("Contact no should only contain numbers");
+          return false;
+        }
+
+        return true;
+      }
+
+      const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+      document
+        .getElementById("myform")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const emailInput = document.getElementById("email");
+          const email = emailInput.value.trim();
+
+          if (gmailRegex.test(email)) {
+            // Valid Gmail address
+            alert("Valid Gmail address submitted: " + email);
+            // Here, you can perform any further actions with the valid email address.
+          } else {
+            // Invalid Gmail address
+            alert("Invalid Gmail address. Please enter a valid Gmail address.");
+            // You can add additional code here if you want to handle the invalid input differently.
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  height: 150vh;
+  width: 100%;
+  background-image: url(img.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.form-box {
+  width: 90%;
+
+  max-width: 450px; /*by putting this value not directly setting the width to some fixed value we are actually creating a responsive website*/
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 50px 60px 70px;
+  text-align: center;
+}
+.form-box h1 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: #3c00a0;
+  position: relative;
+}
+.form-box h1::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #3c00a0;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.checkbox-game {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: left;
+  justify-content: left;
+
+  margin: 0px;
+  list-style: none;
+  align-content: flex-start;
+}
+.checkbox-game p,
+li,
+input {
+  display: flex;
+
+  text-align: left;
+
+  margin: 0 px;
+  padding: 5px;
+  font-size: large;
+  justify-content: left;
+  align-content: flex-start;
+}
+.input-field .checkbox-game {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.input-field li {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-items: left;
+  align-content: flex-start;
+}
+
+.input-field {
+  background-color: #eaeaea;
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: left;
+}
+input {
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  padding: 18px 15px;
+}
+.input-field i {
+  margin-left: 15px;
+  color: #999;
+}
+.btn-field {
+  width: 100%;
+  /*if there were two button up and in the display:flex; , justify-content:space-between;*/
+}
+.btn-field button {
+  /* flex-basis: 48%;*/
+  background: #3c00a0;
+  color: #fff;
+  height: 60px;
+  border-radius: 50px;
+  padding: 10px 30px;
+  margin: 50px;
+  text-align: center;
+  transform: translateY(-5px);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 20px;
+  /*transition: background 1s;*/
+}
+
+.btn-field button:hover {
+  background-color: black;
+}
+#error {
+  display: none;
+}
